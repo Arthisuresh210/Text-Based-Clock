@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Orbitron', monospace;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: float 10s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+body::before {
+  background: #00ffff;
+  top: 10%;
+  left: 15%;
+}
+
+body::after {
+  background: #ff00ff;
+  bottom: 10%;
+  right: 15%;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(60px); }
+}
